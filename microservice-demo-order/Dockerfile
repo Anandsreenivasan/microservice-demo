@@ -1,4 +1,4 @@
 FROM ewolff/docker-java
-ADD target/microservice-demo-order-0.0.1-SNAPSHOT.jar .
-CMD /usr/bin/java -Xmx400m -Xms400m -jar microservice-demo-order-0.0.1-SNAPSHOT.jar
-EXPOSE 8080
+ADD target/microservice-demo-order-1.0.1.jar .
+CMD /usr/bin/java -Xmx400m -Xms400m -jar microservice-demo-order-1.0.1.jar
+EXPOSE 8083
