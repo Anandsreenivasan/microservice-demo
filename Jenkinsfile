@@ -24,4 +24,15 @@ if (currentBranch('dev')) {
  //bat "workspace/${env.JOB_NAME}/${env.BRANCH_NAME}/OES-v0.4/OQS.sln"
  //sh "${mvnHome}/bin/mvn clean verify -B"  
   }
+  if (currentBranch('master')) {
+   stage ('Checkout') {
+   checkout scm
+   }
+    def mvnHome = tool 'maven-3.0.5'
+	   
+  stage('Build') {  //Build steps go here
+    sh "${mvnHome}/bin/mvn clean install"
+    } 
+
+  }
   }
