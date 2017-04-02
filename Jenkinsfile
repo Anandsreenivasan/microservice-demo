@@ -31,7 +31,7 @@ if (currentBranch('dev')) {
     //def mvnHome = tool 'maven-3.0.5'
 	   
   stage('Build') {  //Build steps go here
-    sh "/usr/share/bin/mvn clean install"
+    sh "/DevOps/maven/apache-maven-3.3.9/bin/mvn clean install"
     } 
 
   }
