@@ -28,10 +28,10 @@ if (currentBranch('dev')) {
    stage ('Checkout') {
    checkout scm
    }
-    def mvnHome = tool 'maven-3.0.5'
+    //def mvnHome = tool 'maven-3.0.5'
 	   
   stage('Build') {  //Build steps go here
-    sh "${mvnHome}/bin/mvn clean install"
+    sh "/usr/share/bin/mvn clean install"
     } 
 
   }
