@@ -12,11 +12,9 @@ if (currentBranch('dev')) {
     // Mark the code build 'stage'....
    // stage 'Build'
 
-    def mvnHome = tool 'maven-3.3.9'
-	
-    
+    // def mvnHome = tool 'maven-3.3.9'
   stage('Build') {  //Build steps go here
-    sh "${mvnHome}/bin/mvn clean install"
+    sh "/DevOps/maven/apache-maven-3.3.9/bin/mvn clean install"
     } 
 // stage('NUnit Tests') {  //Unit testing steps go here
     //     bat '"C:\\Program Files (x86)\\NUnit.org\\nunit-console\\nunit3-console.exe" ./LandingPageSvc.Test/bin/Debug/LandingPageSvc.Tests.dll --result nunit-result.xml'
