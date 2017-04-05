@@ -44,7 +44,18 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
+<distributionManagement>
+    <repository>
+        <id>nexus</id>
+        <name>DevOps release</name>
+        <url>${nexus_release_url}</url>
+    </repository>
+	<snapshotRepository>
+            <id>nexus</id>
+            <name>DevOps Snapshot Releases</name>
+            <url>${nexus_snapshot_url}</url>
+    </snapshotRepository>
+   </distributionManagement>
 	<build>
 		<plugins>
 			<plugin>
