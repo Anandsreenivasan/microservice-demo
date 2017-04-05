@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.ewolff</groupId>
 		<artifactId>microservice-demo</artifactId>
-		<version>1.0.1</version>
+		<version>1.0.${build.number}</version>
 	</parent>
 
 	<artifactId>microservice-demo-eureka-server</artifactId>
@@ -22,8 +22,20 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<build>
+	    
+	<distributionManagement>
+    <repository>
+        <id>nexus</id>
+        <name>DevOps release</name>
+        <url>${nexus_release_url}</url>
+    </repository>
+	<snapshotRepository>
+            <id>nexus</id>
+            <name>DevOps Snapshot Releases</name>
+            <url>${nexus_snapshot_url}</url>
+    </snapshotRepository>
+   </distributionManagement>
+   <build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -43,6 +55,33 @@
 					</requiresUnpack>
 				</configuration>
 			</plugin>
+			<!-- <plugin>
+			<artifactId>maven-release-plugin</artifactId>
+			<version>2.5.3</version>
+			</plugin>
+			<plugin>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.5.1</version>
+			<configuration>
+			<source>1.8</source>
+			<target>1.8</target>
+			</configuration>
+			</plugin>
+			<plugin>
+			<groupId>org.apache.maven.plugin</groupId>
+			<artifactId>maven-source-plugin</artifactId>
+			<version>3.0.1</version>
+			<configuration>
+			<attach>false</attach>
+			</configuration>
+			</plugin>
+			<plugin>
+			<groupId>org.apache.maven.plugin</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>2.10.4</version>
+			</plugin> -->
+			
+			
 		</plugins>
 	</build>
 
