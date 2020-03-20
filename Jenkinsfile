@@ -3,6 +3,7 @@
 def currentBranch(branchName) {
     return env.BRANCH_NAME == branchName
     }
+
 node ('UnixNode1'){
 
 if (currentBranch('dev')) {
